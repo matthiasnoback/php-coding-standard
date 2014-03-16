@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<ruleset name="MatthiasNoback">
+    <description>A custom coding standard, based on PSR-1/2</description>
+    <rule ref="PSR1">
+        <exclude name="PSR1.Methods.CamelCapsMethodName" />
+    </rule>
+    <rule name="PSR1.Methods.CamelCapsMethodName">
+        <exclude-pattern>*Test.php</exclude-pattern>
+    </rule>
+    <rule ref="PSR2" />
+    <!--
+    TODO:
+    - no extra blank lines around namespace and use
+    - no @var for member variables that are provided by the constructor
+    -->
+</ruleset>
