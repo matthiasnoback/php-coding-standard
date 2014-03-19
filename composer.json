@@ -14,10 +14,10 @@
     ],
     "require": {
         "squizlabs/php_codesniffer": "~1.5",
-        "matthiasnoback/code-sniffer-sniff-dsl": "*"
+        "matthiasnoback/code-sniffer-sniff-dsl": "~0.1"
     },
     "require-dev": {
-        "phpunit/phpunit": "~3.7",
+        "phpunit/phpunit": "~3.7"
     },
     "autoload": {
         "psr-0": {
