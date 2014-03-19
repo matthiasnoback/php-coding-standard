@@ -21,9 +21,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Matthias\\Codesniffer\\Tests": "tests/",
             "Matthias\\PhpCodingStandard\\Tests": "tests/",
-            "Matthias\\Codesniffer\\": "src/",
             "Matthias\\PhpCodingStandard": "src/"
         }
     }
