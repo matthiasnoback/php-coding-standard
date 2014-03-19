@@ -13,9 +13,18 @@
         }
     ],
     "require": {
-        "squizlabs/php_codesniffer": "~1.5"
+        "squizlabs/php_codesniffer": "~1.5",
+        "beberlei/assert": "2.*"
     },
     "require-dev": {
         "phpunit/phpunit": "~3.7"
+    },
+    "autoload": {
+        "psr-0": {
+            "Matthias\\Codesniffer\\Tests": "tests/",
+            "Matthias\\PhpCodingStandard\\Tests": "tests/",
+            "Matthias\\Codesniffer\\": "src/",
+            "Matthias\\PhpCodingStandard": "src/"
+        }
     }
 }
