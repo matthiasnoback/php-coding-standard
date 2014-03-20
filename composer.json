@@ -14,7 +14,7 @@
     ],
     "require": {
         "squizlabs/php_codesniffer": "~1.5",
-        "matthiasnoback/code-sniffer-sniff-dsl": "~0.1"
+        "matthiasnoback/code-sniffer-sniff-dsl": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "~3.7"
