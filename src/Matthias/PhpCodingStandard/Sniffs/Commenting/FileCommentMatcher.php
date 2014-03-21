@@ -25,11 +25,15 @@ class FileCommentMatcher implements MatcherInterface
         $sequence = SequenceBuilder::create()
             ->lookingBackward()
             ->expect()
-            ->any()
-            ->token(T_WHITESPACE, "\n")
-            ->then()
-            ->exactly(1)
-            ->token(T_OPEN_TAG)
+                ->quantity()
+                    ->any()
+                    ->token(T_WHITESPACE, "\n")
+                ->end()
+                ->quantity()
+                    ->exactly(1)
+                    ->token(T_OPEN_TAG)
+                ->end()
+            ->end()
             ->build();
 
         return $sequence->matches($tokens, $tokenIndex);
@@ -39,11 +43,15 @@ class FileCommentMatcher implements MatcherInterface
     {
         $sequence = SequenceBuilder::create()
             ->expect()
-            ->any()
-            ->token(T_DOC_COMMENT)
-            ->then()
-            ->atLeast(2)
-            ->tokens(T_WHITESPACE, "\n")
+                ->quantity()
+                    ->any()
+                    ->token(T_DOC_COMMENT)
+                ->end()
+                ->quantity()
+                    ->atLeast(2)
+                    ->token(T_WHITESPACE, "\n")
+                ->end()
+            ->end()
             ->build();
 
         return $sequence->matches($tokens, $tokenIndex);

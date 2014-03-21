@@ -29,13 +29,13 @@ class FileCommentMatcherTest extends \PHPUnit_Framework_TestCase
     {
         return array(
             array(
-                TokenBuilder::createOpenTag()->build(),
-                TokenBuilder::createNewLine()->build(),
-                TokenBuilder::createDocComment()->build(),
-                TokenBuilder::createDocComment()->build(),
-                TokenBuilder::createDocComment()->build(),
-                TokenBuilder::createNewLine()->build(),
-                TokenBuilder::createNewLine()->build(),
+                TokenBuilder::create('T_OPEN_TAG')->build(),
+                TokenBuilder::create('T_WHITESPACE')->setContent("\n")->build(),
+                TokenBuilder::create('T_DOC_COMMENT')->build(),
+                TokenBuilder::create('T_DOC_COMMENT')->build(),
+                TokenBuilder::create('T_DOC_COMMENT')->build(),
+                TokenBuilder::create('T_WHITESPACE')->setContent("\n")->build(),
+                TokenBuilder::create('T_WHITESPACE')->setContent("\n")->build()
             ),
             2,
             true
@@ -47,7 +47,7 @@ class FileCommentMatcherTest extends \PHPUnit_Framework_TestCase
         return array(
             array(
                 TokenBuilder::create('T_CLASS')->build(),
-                TokenBuilder::createDocComment()->build(),
+                TokenBuilder::create('T_DOC_COMMENT')->build()
             ),
             1,
             false
