@@ -14,13 +14,8 @@ class PhpCodingStandard_Sniffs_Commenting_InterfaceMethodHasDocCommentSniff impl
     public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
     {
         $tokens = $phpcsFile->getTokens();
-        $currentToken = $tokens[$stackPtr];
 
-        $interfaceConditions = array_filter($currentToken['conditions'], function($tokenCode) {
-            return $tokenCode === T_INTERFACE;
-        });
-
-        if (count($interfaceConditions) === 0) {
+        if (!$phpcsFile->getCondition($stackPtr, T_INTERFACE)) {
             // this function is not part of an interface
             return;
         }
